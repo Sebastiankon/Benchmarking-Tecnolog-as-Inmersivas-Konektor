@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmarking: Tecnologías Inmersivas en Centros Comerciales - Parque Arauco</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .chart-container { height: 400px; }
+        .metric-card { transition: transform 0.2s; }
+        .metric-card:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">Benchmarking: Tecnologías Inmersivas</h1>
+                <h2 class="text-2xl font-light mb-2">Centros Comerciales - Análisis Estratégico</h2>
+                <div class="flex justify-center items-center space-x-8 mt-6">
+                    <div class="text-center">
+                        <p class="text-sm opacity-80">Preparado para:</p>
+                        <p class="font-semibold">Francisco Moyano - CFO</p>
+                        <p class="font-bold text-lg">Parque Arauco</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm opacity-80">Elaborado por:</p>
+                        <p class="font-semibold">Sebastián Wagner</p>
+                        <p class="text-sm">Key Account Manager</p>
+                        <p class="font-bold">Konektor Chile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <i class="fas fa-chart-line mr-3 text-blue-600"></i>Resumen Ejecutivo
+            </h2>
+            <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-500">
+                <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                    <strong>Parque Arauco</strong> se encuentra en una posición estratégicamente ventajosa para liderar la adopción de tecnologías inmersivas en centros comerciales en América Latina. El análisis confirma una <strong>ventana de oportunidad de 12-18 meses</strong> para establecer liderazgo regional.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mt-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-blue-600">40-60%</div>
+                        <div class="text-sm text-gray-600">Menor inversión vs. benchmarks globales</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-green-600">28%</div>
+                        <div class="text-sm text-gray-600">ROI proyectado promedio</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-purple-600">11 meses</div>
+                        <div class="text-sm text-gray-600">Período de recuperación</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Landscape -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <i class="fas fa-globe mr-3 text-green-600"></i>Panorama Competitivo
+            </h2>
+            
+            <!-- Key Metrics Comparison -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Superficie Total (M m²)</h3>
+                    <div class="chart-container">
+                        <canvas id="surfaceChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Inversión Tecnológica (M USD)</h3>
+                    <div class="chart-container">
+                        <canvas id="investmentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competitor Cards -->
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md metric-card">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-building text-2xl text-blue-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Westfield (URW)</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <p><span class="font-medium">Región:</span> EE.UU./Europa</p>
+                        <p><span class="font-medium">Centros:</span> 67 operaciones</p>
+                        <p><span class="font-medium">Tecnologías:</span> IXD Network, AR Navigation</p>
+                        <p><span class="font-medium">Estado:</span> Implementación parcial</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md metric-card">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-store text-2xl text-purple-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Klépierre</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <p><span class="font-medium">Región:</span> Europa</p>
+                        <p><span class="font-medium">Superficie:</span> 4.0M m²</p>
+                        <p><span class="font-medium">Tecnologías:</span> Digital Signage, Omnicanal</p>
+                        <p><span class="font-medium">Crecimiento:</span> +6.3% ingresos netos</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md metric-card">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-maple-leaf text-2xl text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-semibold text-gray-800">Cadillac Fairview</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <p><span class="font-medium">Región:</span> Canadá</p>
+                        <p><span class="font-medium">Superficie:</span> 3.06M m²</p>
+                        <p><span class="font-medium">App LiVE:</span> 220K descargas</p>
+                        <p><span class="font-medium">Inversión:</span> >CAD$175M mejoras</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LATAM Competitors -->
+            <div class="mt-8">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">Competencia Regional LATAM</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2 text-green-700">Grupo Éxito (Colombia)</h4>
+                        <p class="text-sm text-gray-600 mb-2">Viva Malls: 565,000 m²</p>
+                        <p class="text-sm text-gray-600">Inversión 2025: US$100M</p>
+                        <div class="mt-3 text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">
+                            Transformación digital en progreso
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2 text-blue-700">Fibra Uno (México)</h4>
+                        <p class="text-sm text-gray-600 mb-2">Superficie: 11.06M m²</p>
+                        <p class="text-sm text-gray-600">Sin pilotos AR confirmados</p>
+                        <div class="mt-3 text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                            Evaluación tecnológica
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-semibold text-lg mb-2 text-cyan-700">IRSA (Argentina)</h4>
+                        <p class="text-sm text-gray-600 mb-2">Superficie: 336,545 m²</p>
+                        <p class="text-sm text-gray-600">Sin decisiones confirmadas</p>
+                        <div class="mt-3 text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                            Fase de evaluación
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Analysis -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <i class="fas fa-calculator mr-3 text-green-600"></i>Análisis Financiero y ROI
+            </h2>
+
+            <!-- Key Financial Metrics -->
+            <div class="grid lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg text-center">
+                    <i class="fas fa-dollar-sign text-3xl mb-3"></i>
+                    <div class="text-2xl font-bold">$1.43-2.13M</div>
+                    <div class="text-sm opacity-90">Inversión Total (USD)</div>
+                </div>
+                <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg text-center">
+                    <i class="fas fa-chart-line text-3xl mb-3"></i>
+                    <div class="text-2xl font-bold">+28%</div>
+                    <div class="text-sm opacity-90">ROI Promedio</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg text-center">
+                    <i class="fas fa-clock text-3xl mb-3"></i>
+                    <div class="text-2xl font-bold">11 meses</div>
+                    <div class="text-sm opacity-90">Payback Period</div>
+                </div>
+                <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg text-center">
+                    <i class="fas fa-trending-up text-3xl mb-3"></i>
+                    <div class="text-2xl font-bold">15-25%</div>
+                    <div class="text-sm opacity-90">Revenue Upside</div>
+                </div>
+            </div>
+
+            <!-- Investment Efficiency Comparison -->
+            <div class="bg-gray-50 p-8 rounded-lg mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-gray-800">Eficiencia de Inversión por m²</h3>
+                <div class="chart-container">
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Revenue Projections -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Proyección de Ingresos Adicionales</h3>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <i class="fas fa-microchip mr-3 text-purple-600"></i>Stack Tecnológico
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Core Technologies -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Tecnologías Principales</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                            <i class="fas fa-eye text-2xl text-blue-600 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Realidad Aumentada (AR)</h4>
+                                <p class="text-sm text-gray-600">Wayfinding, promociones, visualización de productos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center p-4 bg-purple-50 rounded-lg">
+                            <i class="fas fa-vr-cardboard text-2xl text-purple-600 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Realidad Virtual (VR)</h4>
+                                <p class="text-sm text-gray-600">Showrooms virtuales, recorridos remotos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                            <i class="fas fa-clone text-2xl text-green-600 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Gemelos Digitales</h4>
+                                <p class="text-sm text-gray-600">Optimización minorista, monitoreo operaciones</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center p-4 bg-orange-50 rounded-lg">
+                            <i class="fas fa-brain text-2xl text-orange-600 mr-4"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Inteligencia Artificial</h4>
+                                <p class="text-sm text-gray-600">Customer analytics, predicción de comportamiento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Implementation Benefits -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Beneficios de Implementación</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Experiencia del Cliente</h4>
+                            <p class="text-sm text-gray-600">Navegación intuitiva, personalización, engagement mejorado</p>
+                        </div>
+
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Eficiencia Operativa</h4>
+                            <p class="text-sm text-gray-600">Reducción costos, mantenimiento predictivo, optimización energética</p>
+                        </div>
+
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Insights de Negocio</h4>
+                            <p class="text-sm text-gray-600">Análisis de comportamiento, heatmaps, métricas avanzadas</p>
+                        </div>
+
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <h4 class="font-semibold text-gray-800">Ventaja Competitiva</h4>
+                            <p class="text-sm text-gray-600">Diferenciación, atracción de arrendatarios premium, valor mediático</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Roadmap -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <i class="fas fa-road mr-3 text-blue-600"></i>Roadmap de Implementación
+            </h2>
+
+            <div class="space-y-8">
+                <!-- Phase 1 -->
+                <div class="bg-blue-50 p-8 rounded-lg border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">1</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Fase 1: Proof of Concept (Q3 2025)</h3>
+                            <p class="text-blue-600 font-medium">Inversión: $180-250K USD</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Implementación</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Piloto en Parque Arauco Kennedy</li>
+                                <li>• AR Navigation y Digital Signage</li>
+                                <li>• Infraestructura de métricas</li>
+                                <li>• Formación de equipo especializado</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">KPIs Objetivo</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Dwell time: +15%</li>
+                                <li>• NPS: +20%</li>
+                                <li>• Feedback locatarios: 8.5/10</li>
+                                <li>• Impactos mediáticos: 5</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="bg-green-50 p-8 rounded-lg border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">2</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Fase 2: Escalado Regional (Q1 2026)</h3>
+                            <p class="text-green-600 font-medium">Inversión: $450-680K USD</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Implementación</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Expansión a 3-4 centros (Chile, Perú, Colombia)</li>
+                                <li>• Red VR Showrooms</li>
+                                <li>• Personalización IA</li>
+                                <li>• Integración omnicanal</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">KPIs Objetivo</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Engagement: +22%</li>
+                                <li>• Ingresos por m²: +12%</li>
+                                <li>• Eficiencia operativa: +18%</li>
+                                <li>• Satisfacción cliente: +25%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="bg-purple-50 p-8 rounded-lg border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-500 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-4">3</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Fase 3: Liderazgo Regional (Q3 2026)</h3>
+                            <p class="text-purple-600 font-medium">Inversión: $800K-1.2M USD</p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Implementación</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Despliegue completo portafolio</li>
+                                <li>• Metaverso y blockchain</li>
+                                <li>• IA operacional avanzada</li>
+                                <li>• Sostenibilidad tecnológica</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-semibold mb-2">Impacto Esperado</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Valor mediático: $2-3M</li>
+                                <li>• Eficiencia operativa: +35%</li>
+                                <li>• Liderazgo tecnológico LATAM</li>
+                                <li>• Premium tenant attraction</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Management -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <i class="fas fa-shield-alt mr-3 text-red-600"></i>Gestión de Riesgos y Mitigaciones
+            </h2>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">Riesgos Identificados</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Riesgo Tecnológico</h4>
+                            <p class="text-sm text-gray-600">Obsolescencia rápida, compatibilidad de sistemas</p>
+                        </div>
+                        <div class="border-l-4 border-orange-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Riesgo Financiero</h4>
+                            <p class="text-sm text-gray-600">ROI menor al proyectado, costos ocultos</p>
+                        </div>
+                        <div class="border-l-4 border-yellow-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Riesgo Operacional</h4>
+                            <p class="text-sm text-gray-600">Resistencia al cambio, capacitación insuficiente</p>
+                        </div>
+                        <div class="border-l-4 border-purple-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Riesgo Competitivo</h4>
+                            <p class="text-sm text-gray-600">Competidores adelanten implementación</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-green-600">Estrategias de Mitigación</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-green-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Arquitectura Flexible</h4>
+                            <p class="text-sm text-gray-600">Sistemas modulares, APIs abiertas, escalabilidad</p>
+                        </div>
+                        <div class="border-l-4 border-blue-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Implementación Escalonada</h4>
+                            <p class="text-sm text-gray-600">Puertas de decisión ROI, inversión gradual</p>
+                        </div>
+                        <div class="border-l-4 border-indigo-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Partnership Estratégico</h4>
+                            <p class="text-sm text-gray-600">Proveedores locales, experiencia LATAM</p>
+                        </div>
+                        <div class="border-l-4 border-cyan-400 pl-4">
+                            <h4 class="font-semibold text-gray-800">Monitoreo Continuo</h4>
+                            <p class="text-sm text-gray-600">KPIs en tiempo real, ajustes rápidos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <i class="fas fa-lightbulb mr-3 text-yellow-600"></i>Recomendaciones Estratégicas
+            </h2>
+
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-8 rounded-lg mb-8">
+                <h3 class="text-2xl font-bold mb-4">Recomendación Principal</h3>
+                <p class="text-lg mb-4">
+                    <strong>Ejecutar Fase 1 inmediatamente</strong> antes de que competidores avancen. La ventana de oportunidad de 12-18 meses para liderazgo regional es crítica.
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-white/20 p-4 rounded">
+                        <h4 class="font-semibold">Cronograma Crítico</h4>
+                        <p class="text-sm">Inicio Q3 2025</p>
+                    </div>
+                    <div class="bg-white/20 p-4 rounded">
+                        <h4 class="font-semibold">First-Mover Advantage</h4>
+                        <p class="text-sm">12-18 meses ventaja</p>
+                    </div>
+                    <div class="bg-white/20 p-4 rounded">
+                        <h4 class="font-semibold">ROI Verificable</h4>
+                        <p class="text-sm">Control interno KPIs</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3 text-blue-800">Acciones Inmediatas</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Formar equipo especializado (Julio 2025)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Seleccionar proveedores locales (Agosto 2025)</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Iniciar piloto Kennedy (Septiembre 2025)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3 text-green-800">Factores de Éxito</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-star text-yellow-500 mr-2 mt-1"></i>KPIs auditables y verificables</li>
+                        <li class="flex items-start"><i class="fas fa-star text-yellow-500 mr-2 mt-1"></i>Gestión efectiva del cambio</li>
+                        <li class="flex items-start"><i class="fas fa-star text-yellow-500 mr-2 mt-1"></i>Partnership tecnológico sólido</li>
+                    </ul>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3 text-purple-800">Próximos Pasos</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-purple-500 mr-2 mt-1"></i>Aprobación presupuesto Fase 1</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-purple-500 mr-2 mt-1"></i>RFP proveedores tecnológicos</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-purple-500 mr-2 mt-1"></i>Plan detallado implementación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">Benchmarking elaborado por <strong>Sebastián Wagner</strong> - Key Account Manager, Konektor Chile</p>
+            <p class="text-sm opacity-80">Para Francisco Moyano, CFO - Parque Arauco</p>
+            <p class="text-xs opacity-60 mt-4">Este análisis se basa en datos públicos verificables y proyecciones estratégicas actualizadas</p>
+        </div>
+    </footer>
+
+    <script>
+        // Surface Comparison Chart
+        const surfaceCtx = document.getElementById('surfaceChart').getContext('2d');
+        new Chart(surfaceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Parque Arauco', 'Fibra Uno', 'Klépierre', 'Cadillac Fairview', 'Westfield', 'Viva Malls', 'IRSA'],
+                datasets: [{
+                    label: 'Superficie (M m²)',
+                    data: [1.2, 11.06, 4.0, 3.06, 4.2, 0.565, 0.337],
+                    backgroundColor: ['#3B82F6', '#10B981', '#8B5CF6', '#F59E0B', '#EF4444', '#06B6D4', '#84CC16']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Investment Comparison Chart
+        const investmentCtx = document.getElementById('investmentChart').getContext('2d');
+        new Chart(investmentCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Parque Arauco', 'Westfield', 'Klépierre', 'Cadillac Fairview', 'Fibra Uno', 'Grupo Éxito'],
+                datasets: [{
+                    label: 'Inversión Tecnológica (M USD)',
+                    data: [1.78, 45, 28, 52, 15, 100],
+                    backgroundColor: ['#3B82F6', '#EF4444', '#8B5CF6', '#F59E0B', '#10B981', '#06B6D4']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Investment Efficiency Chart
+        const efficiencyCtx = document.getElementById('efficiencyChart').getContext('2d');
+        new Chart(efficiencyCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Parque Arauco', 'Westfield', 'Klépierre', 'Cadillac Fairview'],
+                datasets: [{
+                    label: 'Inversión por m² (USD)',
+                    data: [1.48, 2.85, 2.34, 2.12],
+                    backgroundColor: ['#10B981', '#EF4444', '#8B5CF6', '#F59E0B']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Revenue Projections Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Año 1', 'Año 2', 'Año 3'],
+                datasets: [{
+                    label: 'Ingresos Adicionales Mínimos (K USD)',
+                    data: [320, 980, 1800],
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    fill: true
+                }, {
+                    label: 'Ingresos Adicionales Máximos (K USD)',
+                    data: [450, 1350, 2400],
+                    borderColor: '#10B981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
